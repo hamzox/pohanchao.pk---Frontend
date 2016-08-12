@@ -1,0 +1,22 @@
+{
+  "name": "pohanchao.pk",
+  "authors": [
+    "Hamza Khan <hamza_140995@hotmail.com>"
+  ],
+  "description": "service based website",
+  "main": "index.html",
+  "keywords": [
+    "food",
+    "services",
+    "brands"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
