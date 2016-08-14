@@ -1,3 +1,6 @@
+.portfolio-item img {
+    margin-top: 10px;
+}
 #portfolio .portfolio-item {
   margin: 0 0 15px;
   right: 0;
