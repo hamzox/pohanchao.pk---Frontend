@@ -30,7 +30,7 @@
 }
 
 .sticky {
-  background-color: rgba(255, 255, 255, 0.9);
+  background:linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(0,0,255,1) 100%);
   opacity: 1;
   top: 0px;
   border-bottom: 1px solid gainsboro;
@@ -43,7 +43,7 @@
   text-transform: uppercase;
   float: left;
   display: block;
-  margin-top: 0;
+  margin-top: 6px;
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -134,7 +134,6 @@ nav ul a {
 }
 
 body {
-  color: #8f8f8f;
   background: white;
   font-family: "Cardo", serif;
   font-weight: 300;
@@ -142,9 +141,16 @@ body {
 }
 
 footer { 
+    color: gainsboro;
     padding-top: 20px;
-    
-    background-color: gainsboro;
+    box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+    background: linear-gradient(to right, rgba(13,110,201,1) 0%, rgba(0,0,92,1) 100%);
+}
+footer a {
+    color: #337AFF;
+}
+footer a:hover {
+    color: gainsboro;
 }
 
 hr {
