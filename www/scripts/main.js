@@ -56,8 +56,27 @@ $('nav a').click(function(event) {
                 setTimeout(function(){ _urq.push(['Feedback_Open']); }, 300);
             };
             
-        });
-
-//EO - Feedback form jquery
+        });//EO - Feedback form jquery
+     
     
+    setTimeout(function(){
+            $('.usrp-sb-2').addClass('slide-in');
+        }, 200);
+    
+        /* On Yes/No adjust position of subscribe */
+        $('.usrp-sb-btn-yes,.usrp-sb-btn').on('click',function (){
+            $('.usrp-sb-2').css({'top':'35%','right':'0','z-index':'0'});
+        });
+        
+        /* Bind actions to small buttons click */
+        $('.usrp-sb-2 .usrp-sb-btn').on('click', function(){
+            /* Collapse the feedback message into a regular button */
+            $('.usrp-sb-2').removeClass('is-expanded')
+            setTimeout(function(){ $('.usrp-sb-2').addClass('is-collapsed'); }, 300)
+            
+            /* Open feedback forum if "Yes" button was clicked in feedback message */
+            if ($(this).hasClass('usrp-sb-btn-yes')) {
+                setTimeout(function(){ _urq.push(['Feedback_Open']); }, 300);
+            };
+        });
 });
