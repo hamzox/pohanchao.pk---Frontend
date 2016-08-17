@@ -1,4 +1,7 @@
-// Sticky Header
+
+$(document).ready(function(){
+    
+    // Sticky Header
 $(window).scroll(function() {
 
     if ($(window).scrollTop() > 100) {
@@ -33,4 +36,28 @@ $('nav a').click(function(event) {
         scrollTop: target
     }, 500);
     event.preventDefault();
+});
+
+// Feedback form jquery
+
+        setTimeout(function(){
+            $('.usrp-fb-2').addClass('slide-in');
+        }, 200);
+        
+        /* Bind actions to small buttons click */
+        $('.usrp-fb-2 .usrp-fb-btn').on('click', function(){
+            
+            /* Collapse the feedback message into a regular button */
+            $('.usrp-fb-2').removeClass('is-expanded')
+            setTimeout(function(){ $('.usrp-fb-2').addClass('is-collapsed'); }, 300)
+            
+            /* Open feedback forum if "Yes" button was clicked in feedback message */
+            if ($(this).hasClass('usrp-fb-btn-yes')) {
+                setTimeout(function(){ _urq.push(['Feedback_Open']); }, 300);
+            };
+            
+        });
+
+//EO - Feedback form jquery
+    
 });
