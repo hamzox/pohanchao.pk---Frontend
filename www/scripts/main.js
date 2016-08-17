@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    
+    console.log("Document working!");
     // Sticky Header
 $(window).scroll(function() {
 
