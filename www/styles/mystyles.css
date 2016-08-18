@@ -1,6 +1,10 @@
+.center {
+    text-align: center;
+}
 .containerCustom {
     box-shadow: 0px 0px 24px -6px rgba(0,0,0,1);
     background: white;
+    width: 90%;
 }
 .main_h {
   position: fixed;
@@ -148,7 +152,7 @@ footer a:hover {
 }
 
 hr {
-    border-top: 4px solid rgba(13,110,201,01);
+    border-top: 4px solid rgba(13,110,201,1);
     width: 85%;
     border-radius: 7px;
 }
@@ -247,18 +251,16 @@ p {
 }
 .grow img {
     margin-top: 10px;
-    
     width: 300px;
-    height: 200px;
-    
-    transition: 0.4s;
+    height: auto;
 }
-.grow img:hover {
-    
-    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.75);
+.snippet {
+    padding-bottom: 50px;
+    padding-top: 50px;
 }
 .snippet img {
     margin: 0 auto;
+    height: 90px;
 }
 .feedbackBtn {
     border-radius: 50%;
@@ -286,6 +288,59 @@ p {
 .dealLabel {
     padding-top: 9px;
     padding-bottom:10px; 
+}
+.large {
+    font-size: 40px; 
+    transition: 0.4s;
+    color: #337AFF;
+}
+.large:hover {
+    color: ghostwhite;
+}
+.hovereffect img {
+    margin: 0 auto;
+}
+.snippet-button button {
+    border-radius: 180px;
+}
+#order:hover {
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.75);
+}
+#order {
+    margin-bottom: 50px;
+    border-radius: 180px;
+    position: relative;
+    background: linear-gradient(to right, rgba(13,110,201,1) 0%, rgba(0,0,92,0.6) 100%);
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari browswer only*/
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    
+}
+#order:after {
+    content: "";
+    background: lightblue;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+#order:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
 }
 
 /** All animations goes here! **/
