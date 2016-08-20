@@ -1,10 +1,21 @@
 /* Base styles */
+.usrp-sb-2 .usrp-sb-title {
+    margin-bottom: 12px;
+}
+.font-warning {
+    color: red;
+    display:none;
+}
+.font-check {
+    color:green;
+    display:none;
+}
 .usrp-fb-2 {
   top: 12%;
   right: 0;  
 }
 .usrp-sb-2 {
-  top: 55%;
+  top: 66%;
   right: 0;
 }
 
@@ -48,9 +59,10 @@
 
 /* Divider */
 .usrp-fb-2 .usrp-fb-divider,.usrp-sb-2 .usrp-sb-divider {
-  height: 20px;
-  margin-bottom: 25px;
-  border-bottom: 1px dashed #d1d6d6;
+    height: 20px;
+    border-bottom: 1px dashed #d1d6d6;
+    margin-top: -23px;
+    margin-bottom:12px;
 }
 
 /* Buttons */
@@ -99,7 +111,7 @@
 }
 .usrp-sb-2.is-expanded {
     width: 250px;
-    height: 188px;
+    height: 230px;
 }
 .usrp-fb-2.is-expanded,.usrp-sb-2.is-expanded {
   
@@ -130,13 +142,13 @@
 }
 
 .usrp-fb-2 .usrp-fb-state-expanded .usrp-fb-title,.usrp-sb-2 .usrp-sb-state-expanded .usrp-sb-title {
-  margin-bottom: 20px;
+  margin-bottom: 13px;
 }
 
 /* Collapsed */
 .usrp-fb-2:not(.is-expanded),.usrp-sb-2:not(.is-expanded)  {
-  width: 50px;
-  height: 130px;
+  width: 37px;
+  height: 127px;
   cursor: pointer;
 }
 

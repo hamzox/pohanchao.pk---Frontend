@@ -1,110 +1,212 @@
-//all variables goes here
+/** VARIABLES **/
+var header = $('.main_h');
 
-//EO - variables
+var userFeedback = $('.usrp-fb-2');
+var userSubscribe = $('.usrp-sb-2');
+
+var navigation = $('.navigation');
+
+var textAreaInput = $('.textareaInput');
+var emailSubscribe = $('.emailSubscribe');
+
+var container = $("#contentTemplate");
+
+var fontFeedback = $('.usrp-fb-2 .fa');
+var fontSubscribe = $('.usrp-sb-2 .fa');
+
+var classOpenNav = 'open-nav';
+var classSticky = 'sticky'; 
+var patternEmail = new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+
+var feedbackText;
+var emailText;
+/** EO - VARIABLES **/
 
 
 $(document).ready(function(){
-        console.log("Document working!");
+    
+        /** Some important initializations **/
+        
+        feedbackText="";
+        emailText="";
+    
+        textAreaInput.val("");
+        emailSubscribe.val("");
+        
+    
+        /** Navigation script **/
         
         // Sticky Header
         $(window).scroll(function() {
 
             if ($(window).scrollTop() > 100) {
-                $('.main_h').addClass('sticky');
+                header.addClass(classSticky);
             } else {
-                $('.main_h').removeClass('sticky');
+                header.removeClass(classSticky);
             }
         });
 
         // Mobile Navigation
         $('.mobile-toggle').click(function() {
-            if ($('.main_h').hasClass('open-nav')) {
-                $('.main_h').removeClass('open-nav');
+            if (header.hasClass(classOpenNav)) {
+                header.removeClass(classOpenNav);
             } else {
-                $('.main_h').addClass('open-nav');
+                header.addClass(classOpenNav);
             }
         });
 
         $('.main_h li a').click(function() {
-            if ($('.main_h').hasClass('open-nav')) {
-                $('.navigation').removeClass('open-nav');
-                $('.main_h').removeClass('open-nav');
+            if (header.hasClass(classOpenNav)) {
+                navigation.removeClass(classOpenNav);
+                header.removeClass(classOpenNav);
             }
         });
 
         // navigation scroll lijepo radi materem
         $('nav a').click(function(event) {
+            
             var id = $(this).attr("href");
             var offset = 70;
             var target = $(id).offset().top - offset;
+            
             $('html, body').animate({
                 scrollTop: target
             }, 500);
             event.preventDefault();
         });
+        
+        /** EO - Navigation script**/
 
-        // Feedback form jquery
+        /** Feedback form jquery **/
         setTimeout(function(){
-            $('.usrp-fb-2').addClass('slide-in');
+            userFeedback.addClass('slide-in');
         }, 200);
         
         /* Bind actions to small buttons click */
-        $('.usrp-fb-2 .usrp-fb-btn').on('click', function(){
+        $('.usrp-fb-btn').on('click', function(){
+            feedbackText = textAreaInput.val();
             
+            fontFeedback.removeClass('fa-check font-check');
+            
+            textAreaInput.val("");
+
             /* Collapse the feedback message into a regular button */
-            $('.usrp-fb-2').removeClass('is-expanded')
-            setTimeout(function(){ $('.usrp-fb-2').addClass('is-collapsed'); }, 300)
+            userFeedback.removeClass('is-expanded')
+            setTimeout(function(){ userFeedback.addClass('is-collapsed'); }, 300)
             
             /* Open feedback forum if "Yes" button was clicked in feedback message */
             if ($(this).hasClass('usrp-fb-btn-yes')) {
-                setTimeout(function(){ _urq.push(['Feedback_Open']); }, 300);
+                
+                if (feedbackText.length > 0) {
+                    console.log("Feedback pushed to database: "+feedbackText);
+                    /** Push to database here **/
+                } 
+                else {
+                    console.log("Feedback length zero: "+feedbackText);
+                    /** Further logic here for backend **/
+                }
             };
-            
-        });//EO - Feedback form jquery
-     
-        // Subscribe form jquery
-        setTimeout(function(){
-            $('.usrp-sb-2').addClass('slide-in');
-        }, 200);
-    
-        /* On Yes/No adjust position of subscribe */
-        $('.usrp-sb-btn-yes,.usrp-sb-btn').on('click',function (){
-            $('.usrp-sb-2').css({'top':'35%','right':'0','z-index':'0'});
         });
         
+        $('.usrp-fb-2 .usrp-fb-title').on('click',function() {
+            userFeedback.removeClass('is-collapsed');
+            userFeedback.addClass('is-expanded');
+        });
+    
+        textAreaInput.keyup(function() {
+            if (textAreaInput.val().length > 0) {  
+                fontFeedback.addClass('fa-check font-check');
+                $('.font-check').css({'display':'inline'});
+            }
+            else {
+                $('.font-check').css({'display':'none'});
+            }
+        });
+        /** Feedback form jquery **/
+     
+    
+        /** Subscribe form jquery **/
+        setTimeout(function(){
+            userSubscribe.addClass('slide-in');
+        }, 200);
+        $('.usrp-sb-btn-yes,.usrp-sb-btn').on('click',function (){
+            userSubscribe.css({'top':'35%','right':'0','z-index':'0'});
+        });
+        
+        $('.usrp-sb-2 .usrp-sb-title').on('click',function() {
+            userSubscribe.removeClass('is-collapsed');
+            userSubscribe.addClass('is-expanded');
+            userSubscribe.css({'top':'66%','right':'0','z-index':'0'});
+            });
+    
+            emailSubscribe.keyup(function () {
+            
+            var userinputemail = emailSubscribe.val();
+        
+            if(!patternEmail.test(userinputemail))
+            {
+                $('.usrp-sb-2 .font-check').css({'display':'none'});
+                console.log("NO!");
+            }
+            else
+            {   
+                fontSubscribe.addClass('fa-check font-check');
+                $('.usrp-sb-2 .font-check').css({'display':'inline'});
+                console.log("YES!"+userinputemail);
+            }
+        });
+    
         /* Bind actions to small buttons click */
         $('.usrp-sb-2 .usrp-sb-btn').on('click', function(){
+            
+            $('.font-check').css({'display':'none'});//Display nothing when font is clicked NO
+            
+            emailSubscribe.val("");
+            
             /* Collapse the feedback message into a regular button */
-            $('.usrp-sb-2').removeClass('is-expanded')
-            setTimeout(function(){ $('.usrp-sb-2').addClass('is-collapsed'); }, 300)
+            userSubscribe.removeClass('is-expanded')
+            setTimeout(function(){ userSubscribe.addClass('is-collapsed'); }, 300)
             
             /* Open feedback forum if "Yes" button was clicked in feedback message */
             if ($(this).hasClass('usrp-sb-btn-yes')) {
-                setTimeout(function(){ _urq.push(['Feedback_Open']); }, 300);
+                
+                $('.font-check').css({'display':'none'});//Display nothing when font is clicked YES
+                
+                emailText = emailSubscribe.val();//Final, text value for pushing into the database.
+                
+                
             };
-        });// EO - Subsribe form jquery
+        });
+        /** EO - Subsribe form jquery **/
         
-        
-        // AJAX Requests
-        $('#sign-in').on('click',function() {
-            
-            console.log("Sign-in clicked!");
-            
-            $.ajax(
-                {
-                url:"views/sign-in.html", 
-                dataType: 'text',
-                success: function(data) {
-                    $(".sign-in-modal").html(data);
-                },
-                error: function () {
-                  alert("error loading in modal");  
-                } 
-                });
-            
+        /** AJAX CALLS **/
+        $.ajax(
+        {
+            type: 'GET',
+            url:"views/container.html",
+                    
+            success: function(data) {
+                container.html(data);
+            },
+            error: function () {
+              alert("error loading in content");  
+            } 
         });
         
-        //EO - AJAX Requests
-    
+        $('#sign-up').on('click',function(){
+            $.ajax(
+                {
+                type: 'GET',
+                url:"views/sign-up.html",
+                    
+                success: function(data) {
+                    container.html(data);
+                },
+                error: function () {
+                  alert("error loading in content");  
+                } 
+            });
+        });
+        /** EO - AJAX CALLS **/
     
 });

@@ -9,7 +9,7 @@
 .main_h {
   position: fixed;
   top: 0px;
-  max-height: 70px;
+  max-height: 63px;
   z-index: 999;
   width: 100%;
   padding-top: 17px;
@@ -64,7 +64,7 @@ nav ul {
   float: right;
 }
 nav ul li h5 {
-    font-size: 16px;
+    font-size: 13px;
 }
 nav ul li a {
     color: gainsboro;
@@ -126,7 +126,11 @@ nav ul a {
 * {
   box-sizing: border-box;
 }
-
+textarea {
+    resize: none;
+    margin-top: 10px;
+    margin-left: -4px;
+}
 body {
   background: white;
   font-family: "Cardo", serif;
@@ -142,7 +146,7 @@ footer {
     padding-top: 20px;
     box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
     background: linear-gradient(to right, rgba(13,110,201,1) 0%, rgba(0,0,92,1) 100%);
-    font-size: 18px;
+    font-size: 15px;
 }
 footer a {
     color: #337AFF;
@@ -161,7 +165,7 @@ a {
   text-decoration: none;
 }
 h5 {
-    font-size: 20px;
+    font-size: 17px;
 }
 h1 {
   font-size: 30px;
@@ -260,7 +264,7 @@ p {
 }
 .snippet img {
     margin: 0 auto;
-    height: 90px;
+    height: 80px;
 }
 .feedbackBtn {
     border-radius: 50%;
@@ -290,7 +294,7 @@ p {
     padding-bottom:10px; 
 }
 .large {
-    font-size: 40px; 
+    font-size: 30px; 
     transition: 0.4s;
     color: #337AFF;
 }
@@ -312,12 +316,12 @@ p {
     position: relative;
     background: linear-gradient(to right, rgba(13,110,201,1) 0%, rgba(0,0,92,0.6) 100%);
     border: none;
-    font-size: 28px;
+    font-size: 23px;
     color: #FFFFFF;
-    padding: 20px;
-    width: 300px;
+    padding: 10px;
+    width: 250px;
     text-align: center;
-    -webkit-transition-duration: 0.4s; /* Safari browswer only*/
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     text-decoration: none;
     overflow: hidden;
@@ -341,6 +345,11 @@ p {
     margin: 0;
     opacity: 1;
     transition: 0s
+}
+.logoHeader {
+    height: 40px; 
+    width: 30px; 
+    margin-top:-5px;
 }
 
 /** All animations goes here! **/

@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="styles/feedback.css" type="text/css">
     <link rel="stylesheet" href="styles/sign-in.css" type="text/css">
     <link rel="stylesheet" href="styles/deals.css" type="text/css">
+    <link rel="stylesheet" href="styles/sign-up.css" type="text/css"> 
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,7 +45,7 @@
     <div class="rowHeader">
         <!-- <a class="logo" href="#">Pohanchao.pk</a> -->
         <div class="logo">Pohanchao.pk </div>
-        <a href="#"><img src="images/logo.png" style="height: 40px; width: 30px; margin-top:-5px" alt="logo"></a>
+        <a href="index.html"><img src="images/logo.png" class="logoHeader" alt="logo"></a>
         <div class="mobile-toggle">
             <span></span>
             <span></span>
@@ -52,7 +54,7 @@
 
         <nav>
             <ul>
-                <li><a href="#"><h5><b>Sign Up</b>  <i class="fa fa-user-plus" aria-hidden="true"></i></h5></a></li>
+                <li id="sign-up"><a href="#"><h5><b>Sign Up</b>  <i class="fa fa-user-plus" aria-hidden="true"></i></h5></a></li>
                 <li id="sign-in"><a href="#" data-toggle="modal" data-target="#login-modal"><h5><b>Sign In</b>  <i class="fa fa-user" aria-hidden="true"></i></h5></a></li>
                 <li><a href="#"><h5><b>Guest?</b>   <i class="fa fa-users" aria-hidden="true"></i></h5></a></li>
                 <li><a href=".sec04">
@@ -62,32 +64,33 @@
 
     </div> <!-- / row -->
 
-    </header>
+    </header><!-- EO - Header -->
     
-    <!--
-    <div class="hero">
+    <!-- Sign in Modal -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                        <h1>Login to Your Account</h1><br>
+                      <form>
+                        <input type="text" name="user" placeholder="Username">
+                        <input type="password" name="pass" placeholder="Password">
+                        <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                      </form>
 
-        <h1><span>Welcome To</span><br>POHANCHAO.PK</h1>
-        
-        <hr>
-
-        <div class="mouse">
-            <span></span>
+                <div class="login-help">
+                        <a href="#">Register</a> - <a href="#">Forgot Password</a> - <a href="#">Guest?</a>
+                </div>
+            </div>
         </div>
-
-    </div>
-    -->
-    <div class="sign-in-modal">
-        
-        
-    </div>
+    </div> <!-- EO - Sign in Modal-->
     
-   <div id="carousel-example" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example" data-slide-to="1"></li>
-    <li data-target="#carousel-example" data-slide-to="2"></li>
-  </ol>
+    <!-- Slider/Carousel -->
+    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example" data-slide-to="1"></li>
+        <li data-target="#carousel-example" data-slide-to="2"></li>
+      </ol>
 
   <div class="carousel-inner">
     <div class="item active">
@@ -119,154 +122,23 @@
   <a class="right carousel-control" href="#carousel-example" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
-</div>
+</div><!-- EO - Slider/Carousel -->
    
+    <!-- Content -->
     <div class="container containerCustom">
-       
-         <div class="row">
-          <div class="row">
-              <h1 class="sec01 headings">How does this work?</h1>
-              <hr>
-              <div class="row snippet">
-              
-              <div class="col-sm-3">
-                  <img src="images/snippets/Select.png" class="img-responsive" alt="">
-                  <h3 class="center">1. Select</h3>
-                  <h5 class="center">Select your favorite store.</h5>
-              </div>
-              <div class="col-sm-3">
-                  <img src="images/snippets/Make%20Cart.png" class="img-responsive" alt="">
-                  <h3 class="center">2. Make Cart</h3>
-                  <h5 class="center">Choose the items you want to buy.</h5>
-              </div>
-              <div class="col-sm-3">
-                  <img src="images/snippets/Receive.png" class="img-responsive" alt="">
-                  <h3 class="center">3. Receive</h3>
-                  <h5 class="center">Receive on your door step.</h5>
-              </div>
-              <div class="col-sm-3">
-                  <img src="images/snippets/Enjoy!.png" class="img-responsive" alt="">
-                  <h3 class="center">4. Enjoy!</h3>
-                  <h5 class="center">Cash on Delivery</h5>
-              </div>
-                  
-              </div>
-              
-              <div class="snippet-button center">
-                  <button id="order">ORDER NOW!</button>
-              </div>
-              
-              
-          </div>
-       
-         </div>
-       
-         <!-- DELIVERY DEALS -->
-         <div class="row">
-          <div class="row">
-              <h1 class="sec02 headings">Delivery Deals in Karachi, Free Food Ordering Online 24x7</h1>
-              <hr>
-              <div class="row" style="margin-top:25px">
-                  
-                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 center">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="images/deals-imgs/coke-deal.jpg" alt="">
-                        <div class="overlay">
-                           <h2>Flat 20% OFF</h2>
-                           <a class="info" href="#">GET IT NOW</a>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="images/deals-imgs/coke-deal.jpg" alt="">
-                        <div class="overlay">
-                           <h2>Flat 20% OFF</h2>
-                           <a class="info" href="#">GET IT NOW</a>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="images/deals-imgs/coke-deal.jpg" alt="">
-                        <div class="overlay">
-                           <h2>Flat 20% OFF</h2>
-                           <a class="info" href="#">GET IT NOW</a>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="images/deals-imgs/coke-deal.jpg" alt="">
-                        <div class="overlay">
-                           <h2>Flat 20% OFF</h2>
-                           <a class="info" href="#">GET IT NOW</a>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="images/deals-imgs/coke-deal.jpg" alt="">
-                        <div class="overlay">
-                           <h2>Flat 20% OFF</h2>
-                           <a class="info" href="#">GET IT NOW</a>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="images/deals-imgs/coke-deal.jpg" alt="">
-                        <div class="overlay">
-                           <h2>Flat 20% OFF</h2>
-                           <a class="info" href="#">GET IT NOW</a>
-                        </div>
-                    </div>
-                  </div>
-              </div>
-          </div>
-         </div> <!-- EO - DELIVERY DEALS -->
-         
-         <!-- SPONSOR/STORES LIST -->
-         <div class="row">
-             <div class="row content">
-               <h1 class="sec01 headings">Our Proud Stores & Sponsors in Karachi</h1>
-               <hr>
-               <div class="sponsor">
-                    <div class="row">
-                        <div class="col-sm-2 col-xs-4 grow">
-                                <img src="images/Coca_cola_logo-2.jpg" class="img-thumbnail" alt="">
-                        </div>
-                        <div class="col-sm-2 col-xs-4 grow">
-                                <img src="images/Nutella-Logo.png" class="img-thumbnail" alt="">
-                        </div>
-                        <div class="col-sm-2 col-xs-4 grow">
-                                <img src="images/unilever-logo.jpg" class="img-thumbnail" alt="">
-                        </div>
-                
-                        <div class="col-sm-2 col-xs-4 grow">
-                                <img src="images/Dalda-logo-jpg.jpg" class="img-thumbnail" alt="">
-                        </div>
-                        <div class="col-sm-2 col-xs-4 grow">
-                                <img src="images/colgate-logo.jpg" class="img-thumbnail" alt="">
-                        </div>
-                        <div class="col-sm-2 col-xs-4 grow">
-                                <img src="images/KitKat_logo.svg.png" class="img-thumbnail" alt="">
-                        </div>    
-                   </div>
-               </div>
-               
-            </div>
-        </div> <!-- EO - SPONSOR/STORES LIST -->
-    </div>
-    
-    
-    
+        <div id="contentTemplate">
+        </div>
+    </div> <!-- EO - Content -->
+
     <!-- FEEDBACK FORM -->
     <div class="usrp-fb-2 is-expanded">            
 
           <div class="usrp-fb-state-expanded">
               <div class="usrp-fb-title">GOT SOME FEEDBACK?</div>
-              How can we improve your experience? We’d love to hear it if you have some great ideas or general feedback for us!
+              <div class="form-group">
+                  <label for="comment">How can we improve your experience? <i class="fa font-feedback" aria-hidden="true"></i></label>
+                  <textarea class="form-control textareaInput" rows="3" id="comment" placeholder="Write here"></textarea>
+              </div>
               <div class="usrp-fb-divider"></div>
               <div class="usrp-fb-btn usrp-fb-btn-yes">Yes</div>
               <div class="usrp-fb-btn">No</div>
@@ -274,7 +146,11 @@
 
           
           <div class="usrp-fb-state-collapsed">
-              <div class="usrp-fb-title">FEEDBACK</div>
+              <div class="usrp-fb-title" style="
+                        margin-bottom: 5px;
+                        margin-top: -18px;
+                        padding-bottom: 8px;"
+                        >FEEDBACK</div>
           </div>
     </div> <!-- EO FEEDBACK FORM -->
     
@@ -283,15 +159,28 @@
         <div class="usrp-sb-state-expanded">
               <div class="usrp-sb-title">DO YOU WANNA SUBSCRIBE?</div>
     
+              <div class="form-group">
+                <label for="email">Email address: <i class="fa font-feedback" aria-hidden="true"></i></label>
+                <input type="email" class="form-control emailSubscribe">
+              </div>
+             
               <div class="usrp-sb-btn usrp-sb-btn-yes">Yes</div>
               <div class="usrp-sb-btn">No</div>
         </div>
        
         <div class="usrp-sb-state-collapsed">
-            <div class="usrp-sb-title" style="margin-bottom:5px; margin-top: -10px;">SUBSCRIBE</div>
+            <div class="usrp-sb-title" style="
+                        margin-bottom: 5px;
+                        margin-top: -24px;
+                        padding-bottom: 13px;"
+                        >
+                        SUBSCRIBE
+                        </div>
         </div>
     </div><!-- EO SUBSCRIBE -->
     
+    
+    <!-- Footer -->
     <footer class="row-footer">
            <div class="sec04">
            
@@ -348,7 +237,7 @@
             </div>
             
             </div>
-    </footer>
+    </footer> <!-- EO - Footer -->
 
     <!-- jQuery -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
