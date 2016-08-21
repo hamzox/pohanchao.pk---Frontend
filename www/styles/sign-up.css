@@ -43,6 +43,10 @@ body {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   font-size: 14px;
+  transition: 0.4s;
+}
+.form input:hover,.form input:focus,.form input:active {
+    box-shadow: 0px 10px 21px -10px rgba(0,0,0,0.75);
 }
 
 /*giving the submit button some awsome styles*/
